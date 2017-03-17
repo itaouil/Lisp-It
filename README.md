@@ -13,4 +13,3 @@ fancy stuff, We should know:
 4. What is the main and its arguments.
 5. Know the existence of pointers (used in strings and lists)
 6. How to handle "PORTABILITY" in C (as it is not a standard feature like it is for Java)
-⋅⋅* C Preprocessor
