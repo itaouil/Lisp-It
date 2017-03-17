@@ -1,6 +1,6 @@
 # Lisp-It
 
-Small project where I write from scratch the Lisp programming language in C. But before that check these branches:
+Small project where I write from scratch a small variant of the Lisp programming language in C. But before that check this/these branches:
 
 ## Warm Up
 
