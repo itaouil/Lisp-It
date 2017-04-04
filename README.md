@@ -13,3 +13,4 @@ In the *warm-up* branch the following topics are tackled:
 5. Pointers
 6. Portability
 7. Natural Languages
+8. Parser & Parsing & Grammar
