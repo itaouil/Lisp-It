@@ -4,12 +4,12 @@ Small project where I write from scratch a small variant of the Lisp programming
 
 ## Warm Up
 
-Just to get (re)acquantained with the C programming language. Before, in fact, jumping straight into writing Parsers and other
-fancy stuff, We should know:
+In the *warm-up* branch the following topics are tackled:
 
-1. What is a compiler and its process (linking, etc)
+1. What is a compiler and what are the compilation steps.
 2. Built-in data types.
-3. How to define your own data types.
-4. What is the main and its arguments.
-5. Know the existence of pointers (used in strings and lists)
-6. How to handle "PORTABILITY" in C (as it is not a standard feature like it is for Java)
+3. Type struct.
+4. The *main*
+5. Pointers
+6. Portability
+7. Natural Languages
