@@ -37,6 +37,43 @@ void add_history(char* nothing) {}
 #include <editline/history.h>
 #endif
 
+// Operation Evaluator
+long eval_op(long x, char* op, long y) {
+
+    if(strcmp(op, "+")) {return x + y;}
+    if(strcmp(op, "-")) {return x - y;}
+    if(strcmp(op, "/")) {return x / y;}
+    if(strcmp(op, "*")) {return x * y;}
+
+    return 0;
+
+}
+
+// AST (Abstract Structure Tree) evaluator
+long eval(mpc_ast_t* t) {
+
+    // Base case
+    if(strstr(t->tag, "number")) {
+        return atoi(t->contents);
+    }
+
+    // Store operator
+    char* op = t->children[1]->contents;
+
+    // Store number
+    long x = eval(t->children[2]);
+
+    // Recursion
+    int i = 3;
+    while(strstr(t->children[i]->tag, "expr")) {
+        x = eval_op(x, op, eval(t->children[i]));
+        i++;
+    }
+
+    return x;
+
+}
+
 // Main
 int main(int argc, char* argv) {
 
@@ -69,8 +106,8 @@ int main(int argc, char* argv) {
         // Use parser to process input
         mpc_result_t r;
         if(mpc_parse("<stdin>", input, Lispy, &r)) {
-            // On success, print and delete AST
-            mpc_ast_print(r.output);
+            long result = eval(r.output);
+            print("%li\n", result);
             mpc_ast_delete(r.output);
         }
 
